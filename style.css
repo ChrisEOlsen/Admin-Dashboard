@@ -37,9 +37,10 @@ ul{
     grid-column:2/4;
     padding-left: 20px;
     padding-top: 16px;
+    padding-bottom: 10px;
+    background-color: #e0f2fe;
 }
 .header-top{
-    background-color: #e0f2fe;
     display: grid;
     grid-template-columns: 30px 3fr 30px 30px 1fr;
 }
@@ -53,7 +54,7 @@ ul{
 }
 .profile-big{
     display: grid;
-    grid-template-columns: 1fr 10fr;
+    grid-template-columns: 1fr 12fr;
 }
 
 .search-bar{
