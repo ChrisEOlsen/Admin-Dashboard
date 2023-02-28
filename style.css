@@ -33,8 +33,35 @@ ul{
     list-style: none;
 }
 
-.header{
+.header-container{
     grid-column:2/4;
+    padding-left: 20px;
+    padding-top: 16px;
+}
+.header-top{
+    background-color: #e0f2fe;
+    display: grid;
+    grid-template-columns: 30px 3fr 30px 30px 1fr;
+}
+.bell, .profile-avatar, .profile-name{
+    padding-left:10px;
+}
+.header-bottom{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    margin-top: 16px;
+}
+.profile-big{
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+}
+
+.search-bar{
+    border: 1px solid black;
+    border-radius: 10px;
+    min-width: 150px;
+    max-width: 400px;
+    height: 20px;
 }
 
 .trending-accounts-container{
