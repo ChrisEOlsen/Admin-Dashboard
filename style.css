@@ -1,0 +1,16 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.navigation-bar{
+    grid-row: 1 / 4;
+}
+
+.header{
+    grid-column:2/4;
+}
+
+.trending-accounts-container{
+    grid-column: 3/4;
+}
