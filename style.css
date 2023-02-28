@@ -69,12 +69,35 @@ ul{
 
 /*Projects grid*/
 .projects-grid-area{
-
+    margin: 8px;
 }
 .projects-grid-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+.project-cell{
+    background-color: #d4d4d4;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    padding-top:6px;
+    padding-left: 10px;
+    margin: 8px;
+}
+.project-title{
+    margin-bottom:10px;
+}
+.bottom-cell{
+    display: flex;
+    justify-content: right;
+}
+.mini-buttons{
+    margin-top: 5px;
+    margin-right: 34px;
+    margin-bottom: 12px;
+}
+
+
+
 
 
 .trending-accounts-container{
