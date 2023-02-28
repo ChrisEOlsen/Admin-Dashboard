@@ -9,6 +9,7 @@ html, body { /*Browser reset*/
     grid-template-columns: 1fr 3fr 1fr;
 }
 
+/*Left navigation bar and logo*/
 .navigation-bar{
     grid-row: 1 / 4;
     color: white;
@@ -33,6 +34,8 @@ ul{
     list-style: none;
 }
 
+
+/*Header*/
 .header-container{
     grid-column:2/4;
     padding-left: 20px;
@@ -43,6 +46,13 @@ ul{
 .header-top{
     display: grid;
     grid-template-columns: 30px 3fr 30px 30px 1fr;
+}
+.search-bar{
+    border: 1px solid black;
+    border-radius: 10px;
+    min-width: 150px;
+    max-width: 400px;
+    height: 20px;
 }
 .bell, .profile-avatar, .profile-name{
     padding-left:10px;
@@ -57,13 +67,15 @@ ul{
     grid-template-columns: 1fr 12fr;
 }
 
-.search-bar{
-    border: 1px solid black;
-    border-radius: 10px;
-    min-width: 150px;
-    max-width: 400px;
-    height: 20px;
+/*Projects grid*/
+.projects-grid-area{
+
 }
+.projects-grid-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
 
 .trending-accounts-container{
     grid-column: 3/4;
