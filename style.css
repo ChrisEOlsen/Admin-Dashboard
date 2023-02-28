@@ -2,6 +2,7 @@
 html, body { /*Browser reset*/
     margin:0;
     padding:0;    
+    background-color: #d4d4d4;
 }
     
 .container{
@@ -26,6 +27,7 @@ html, body { /*Browser reset*/
     align-items: left;
     display: grid;
     gap: 20px;
+    font-size: 20px;
 }
 .main-options li, .settings li{
     margin-bottom: 12px;
@@ -69,22 +71,29 @@ ul{
 
 /*Projects grid*/
 .projects-grid-area{
-    margin: 8px;
+    
 }
 .projects-grid-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 .project-cell{
-    background-color: #d4d4d4;
+    background-color: white;
     display: grid;
     grid-template-rows: 3fr 1fr;
     padding-top:6px;
     padding-left: 10px;
     margin: 8px;
+    border-left: orange 6px solid;
+    border-radius: 6px;
 }
 .project-title{
     margin-bottom:10px;
+    font-weight: 700;  
+    font-size: 18px;
+}
+.project-description{
+    font-size: 16px;
 }
 .bottom-cell{
     display: flex;
@@ -95,7 +104,6 @@ ul{
     margin-right: 34px;
     margin-bottom: 12px;
 }
-
 
 
 
