@@ -10,13 +10,15 @@ html, body { /*Browser reset*/
     grid-template-columns: 1fr 3fr 1fr;
 }
 
+
+
 /*Left navigation bar and logo*/
 .navigation-bar{
     grid-row: 1 / 4;
     color: white;
     background-color: #38bdf8;
     padding-right: 50px;
-    height: 100vh;
+    min-height: 100vh;
 }
 .logo {
     font-size: 24px;
@@ -38,37 +40,84 @@ ul{
 }
 
 
-/*Header*/
+/*Both top and bottom header*/
 .header-container{
     grid-column:2/4;
-    padding-left: 20px;
-    padding-top: 16px;
-    padding-bottom: 10px;
     background-color: #e0f2fe;
+    padding: 10px 24px 12px 24px;
 }
+/*Header top portion*/
 .header-top{
     display: grid;
-    grid-template-columns: 30px 3fr 30px 30px 1fr;
+    grid-template-columns: 4fr 1fr;
+    align-items: center;
 }
-.search-bar{
+.header-top > *{
+    display: flex;
+    align-items: center;
+}
+.search-bar textarea{
+    outline: none;
     border: 1px solid black;
+    resize: none;
+    width: 70%;
+    min-width: 250px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-top: 4px;
     border-radius: 10px;
-    min-width: 150px;
-    max-width: 400px;
     height: 20px;
+    font-size: 16px;
 }
-.bell, .profile-avatar, .profile-name{
-    padding-left:10px;
+.top-right{
+    display: flex;
 }
+.top-right > *{
+    margin-left: 10px;
+}
+.top-right div:nth-child(2) { /*Avatar top-right*/
+    margin-left: 30px;
+    font-size: 36px;
+}
+/*Header bottom portion*/
 .header-bottom{
     display: grid;
-    grid-template-columns: 3fr 1fr;
-    margin-top: 16px;
+    grid-template-columns: 1fr 1fr;
 }
-.profile-big{
-    display: grid;
-    grid-template-columns: 1fr 12fr;
+.header-bottom > * {
+    display: flex;
 }
+.big-profile{
+    align-items: center;
+}
+.big-profile div:nth-child(1){ /*Avatar bottom-left*/
+    font-size: 42px;
+    margin-right: 8px;
+}
+.username div:nth-child(1){
+    font-size: 12px;
+}
+/*Action buttons bottom-left of header*/
+.action-buttons{
+    display: flex;
+    justify-content: right;
+    align-items: end;
+    gap: 6%;
+}
+.action-buttons button{
+    border: none;
+    border-radius: 14px;
+    background-color: #38bdf8;
+    color: white;
+    padding: 6px 12px 6px 12px;
+    font-size: 14px;
+}
+
+
+
+
+
+
 
 /*Projects grid*/
 .projects-grid-area p{
@@ -102,7 +151,7 @@ ul{
 }
 .mini-buttons{
     margin-top: 5px;
-    margin-right: 34px;
+    margin-right: 24px;
     margin-bottom: 12px;
 }
 
