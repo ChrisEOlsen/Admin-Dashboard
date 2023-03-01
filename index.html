@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="navigation-bar">
-            <div class="logo">Dashboard</div>
+            <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 256 256">
+                    <path fill="currentColor" d="M236 78.7a19.4 19.4 0 0 0-2.6-9.8c0-.1 0-.1-.1-.2a20.5 20.5 0 0 0-7.5-7.4l-88-49.5a20.1 20.1 0 0 0-19.6 0l-88 49.5a20 20 0 0 0-7.5 7.5h-.1a.3.3 0 0 1-.1.2a20 20 0 0 0-2.5 9.7v98.6a20.2 20.2 0 0 0 10.2 17.5l88 49.5a20.6 20.6 0 0 0 9 2.5h1.7a21.2 21.2 0 0 0 8.9-2.5l88-49.5a20.2 20.2 0 0 0 10.2-17.5Zm-72 75.2V202l-23.8 13.4l.7-80.4L212 94.6v25.3l-41.9 23.6a11.9 11.9 0 0 0-6.1 10.4Zm-78.1-10.4L44 119.9V94.4l72.9 40.6l-.7 80.6L92 202v-48.1a11.9 11.9 0 0 0-6.1-10.4ZM79 61.3l43.1 24.2a11.7 11.7 0 0 0 11.8 0L177 61.3l22.6 12.8l-70.7 40.1l-72.3-40.3Zm49-27.5l24.5 13.7L128 61.3l-24.5-13.8ZM44 147.4l24 13.5v27.6L44 175Zm144 41.1v-27.6l24-13.5V175Z"/>
+                </svg>
+                Dasboard
+            </div>
             <div class="main-options">
                 <ul>
                     <li>Home</li>
@@ -32,18 +40,33 @@
     <div class="header-container">
         <div class="header-top">
             <div class="search-bar">
-                <div>M</div>
+                <!--Magnifying glass top left-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256">
+                    <path fill="currentColor" d="m232.5 215.5l-40.7-40.7A94.9 94.9 0 0 0 212 116a96 96 0 1 0-96 96a94.9 94.9 0 0 0 58.8-20.2l40.7 40.7a12.1 12.1 0 0 0 17 0a12 12 0 0 0 0-17ZM44 116a72 72 0 1 1 72 72a72.1 72.1 0 0 1-72-72Z"/>
+                </svg>
                 <textarea cols="30" rows="1"></textarea>
             </div>
             <div class="top-right">
-                <div>B</div>
-                <div>O</div>
+                <!--Bell icon top right-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M10 21h4a2 2 0 0 1-2 2a2 2 0 0 1-2-2m11-2v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2a2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6l2 2m-4-8a5 5 0 0 0-5-5a5 5 0 0 0-5 5v7h10v-7m2.75-7.81l-1.42 1.42A8.982 8.982 0 0 1 21 11h2c0-2.93-1.16-5.75-3.25-7.81M1 11h2c0-2.4.96-4.7 2.67-6.39L4.25 3.19A10.96 10.96 0 0 0 1 11Z"/>
+                </svg>
+                <!--Profile avatar top right-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24">
+                    <g fill="orange" fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M16 9a4 4 0 1 1-8 0a4 4 0 0 1 8 0Zm-2 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0Z"/>
+                    <path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11s11-4.925 11-11S18.075 1 12 1ZM3 12c0 2.09.713 4.014 1.908 5.542A8.986 8.986 0 0 1 12.065 14a8.984 8.984 0 0 1 7.092 3.458A9 9 0 1 0 3 12Zm9 9a8.963 8.963 0 0 1-5.672-2.012A6.992 6.992 0 0 1 12.065 16a6.991 6.991 0 0 1 5.689 2.92A8.964 8.964 0 0 1 12 21Z"/></g>
+                </svg>               
                 <div>Christopher Olsen</div>
             </div>
         </div>
         <div class="header-bottom">
             <div class="big-profile">
-                <div>O</div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24">
+                    <g fill="orange" fill-rule="evenodd" clip-rule="evenodd">
+                    <path d="M16 9a4 4 0 1 1-8 0a4 4 0 0 1 8 0Zm-2 0a2 2 0 1 1-4 0a2 2 0 0 1 4 0Z"/>
+                    <path d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11s11-4.925 11-11S18.075 1 12 1ZM3 12c0 2.09.713 4.014 1.908 5.542A8.986 8.986 0 0 1 12.065 14a8.984 8.984 0 0 1 7.092 3.458A9 9 0 1 0 3 12Zm9 9a8.963 8.963 0 0 1-5.672-2.012A6.992 6.992 0 0 1 12.065 16a6.991 6.991 0 0 1 5.689 2.92A8.964 8.964 0 0 1 12 21Z"/></g>
+                </svg> 
                 <div class="username">
                     <div>Hi there,</div>
                     <div>Christopher Olsen (@crispychris)</div>
@@ -66,9 +89,7 @@
                 </div>
                 <div class="bottom-cell">
                     <div class="mini-buttons">
-                        <button>F</button>
-                        <button>E</button>
-                        <button>S</button>
+                        
                     </div>
                 </div>
             </div>
@@ -79,9 +100,7 @@
                 </div>
                 <div class="bottom-cell">
                     <div class="mini-buttons">
-                        <button>F</button>
-                        <button>E</button>
-                        <button>S</button>
+                        
                     </div>
                 </div>
             </div>
@@ -92,9 +111,7 @@
                 </div>
                 <div class="bottom-cell">
                     <div class="mini-buttons">
-                        <button>F</button>
-                        <button>E</button>
-                        <button>S</button>
+                        
                     </div>
                 </div>
             </div>
@@ -105,9 +122,7 @@
                 </div>
                 <div class="bottom-cell">
                     <div class="mini-buttons">
-                        <button>F</button>
-                        <button>E</button>
-                        <button>S</button>
+                        
                     </div>
                 </div>
             </div>
@@ -118,9 +133,7 @@
                 </div>
                 <div class="bottom-cell">
                     <div class="mini-buttons">
-                        <button>F</button>
-                        <button>E</button>
-                        <button>S</button>
+                        
                     </div>
                 </div>
             </div>
@@ -131,9 +144,7 @@
                 </div>
                 <div class="bottom-cell">
                     <div class="mini-buttons">
-                        <button>F</button>
-                        <button>E</button>
-                        <button>S</button>
+                        
                     </div>
                 </div>
             </div>
@@ -144,9 +155,7 @@
                 </div>
                 <div class="bottom-cell">
                     <div class="mini-buttons">
-                        <button>F</button>
-                        <button>E</button>
-                        <button>S</button>
+                        
                     </div>
                 </div>
             </div>
@@ -157,9 +166,7 @@
                 </div>
                 <div class="bottom-cell">
                     <div class="mini-buttons">
-                        <button>F</button>
-                        <button>E</button>
-                        <button>S</button>
+                        
                     </div>
                 </div>
             </div>
@@ -170,9 +177,7 @@
                 </div>
                 <div class="bottom-cell">
                     <div class="mini-buttons">
-                        <button>F</button>
-                        <button>E</button>
-                        <button>S</button>
+                        
                     </div>
                 </div>
             </div>
@@ -225,3 +230,25 @@
     </div>
 </body>
 </html>
+<script>
+
+    //Add all mini button icons to html
+    const miniButtons = document.querySelectorAll('.mini-buttons');
+    miniButtons.forEach(a => {
+        const template = document.createElement('template');
+        template.innerHTML = 
+            `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="#1f2937" d="m5.8 21l1.6-7L2 9.2l7.2-.6L12 2l2.8 6.6l7.2.6l-3.2 2.8H18c-.7 0-1.4.1-2.1.4l2.2-1.9l-4.4-.4l-1.7-4l-1.7 4l-4.4.4l3.3 2.9l-1 4.3l3.8-2.3l.5.3c-.2.5-.4 1.1-.4 1.6L5.8 21M17 14v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="#1f2937" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5c.36 0 .72 0 1.08-.05a6.09 6.09 0 0 1-.08-.95c0-.36.04-.72.1-1.08c-.36.04-.73.08-1.1.08c-3.76 0-7.17-2.14-8.82-5.5a9.821 9.821 0 0 1 17.64 0c-.12.24-.26.45-.39.68c.66.16 1.29.43 1.86.82c.27-.5.51-1 .71-1.5c-1.73-4.39-6-7.5-11-7.5M12 9a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m6 5.5v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="#1f2937" d="M18 22q-1.25 0-2.125-.875T15 19q0-.175.025-.363t.075-.337l-7.05-4.1q-.425.375-.95.588T6 15q-1.25 0-2.125-.875T3 12q0-1.25.875-2.125T6 9q.575 0 1.1.213t.95.587l7.05-4.1q-.05-.15-.075-.337T15 5q0-1.25.875-2.125T18 2q1.25 0 2.125.875T21 5q0 1.25-.875 2.125T18 8q-.575 0-1.1-.212t-.95-.588L8.9 11.3q.05.15.075.338T9 12q0 .175-.025.363T8.9 12.7l7.05 4.1q.425-.375.95-.587T18 16q1.25 0 2.125.875T21 19q0 1.25-.875 2.125T18 22Z"/>
+            </svg>`
+        ;
+        a.appendChild(template.content)
+    });  
+
+
+</script>
