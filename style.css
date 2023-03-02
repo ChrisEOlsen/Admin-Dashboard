@@ -125,6 +125,22 @@ ul{
 
 
 /*Projects grid*/
+.grid-title-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#add-project-button{
+    height: 24px;
+    margin-right: 20px;
+    border: none;
+    background-color: orange;
+    border-radius: 8px;
+    color: white;
+}
+#add-project-button:hover{
+    background-color: darkorange;
+}
 .projects-grid-area p{
     margin-left: 10px;
 }
@@ -136,8 +152,7 @@ ul{
     background-color: white;
     display: grid;
     grid-template-rows: 3fr 1fr;
-    padding-top:6px;
-    padding-left: 10px;
+    padding: 6px 10px 0 10px;
     margin: 0px 8px 8px 8px;
     border-left: orange 6px solid;
     border-radius: 6px;
