@@ -40,9 +40,14 @@ html, body { /*Browser reset*/
 }
 .main-options li, .settings li{
     margin-bottom: 12px;
+    display: flex;
+    align-items: center;
 }
 ul{
     list-style: none;
+}
+.main-options svg, .settings svg{
+    margin-right: 6px;
 }
 
 
