@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
-<body>
+<body id="dashboard">
     <div class="container">
         <div class="navigation-bar">
             <div class="logo">
@@ -253,7 +253,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path fill="#1f2937" d="M18 22q-1.25 0-2.125-.875T15 19q0-.175.025-.363t.075-.337l-7.05-4.1q-.425.375-.95.588T6 15q-1.25 0-2.125-.875T3 12q0-1.25.875-2.125T6 9q.575 0 1.1.213t.95.587l7.05-4.1q-.05-.15-.075-.337T15 5q0-1.25.875-2.125T18 2q1.25 0 2.125.875T21 5q0 1.25-.875 2.125T18 8q-.575 0-1.1-.212t-.95-.588L8.9 11.3q.05.15.075.338T9 12q0 .175-.025.363T8.9 12.7l7.05 4.1q.425-.375.95-.587T18 16q1.25 0 2.125.875T21 19q0 1.25-.875 2.125T18 22Z"/>
         </svg>`;
-            
+
     //Add all mini button icons to html
     function addMiniButtons() {
         const miniButtons = document.querySelectorAll('.mini-buttons');
@@ -273,8 +273,27 @@
     const newProjectButton = document.querySelector('#add-project-button');
     newProjectButton.addEventListener('click', () => {
 
-        projectTitle = prompt('Enter project title:');
-        projectDescription = prompt('Enter project description');
+        //create pop up prompt for new project creation
+        const newProjectPrompt = document.createElement('newProjectPrompt');
+        newProjectPrompt.innerHTML = 
+            `<div class = 'new-project-container'>
+                <div class="new-project-title">
+                    Title:
+                    <textarea cols="30" rows="1" placeholder="Ex. 'Super Cool Project'"></textarea>
+                </div>
+                <div class="new-project-description">
+                    Enter short description:
+                    <textarea cols="30" rows="3" placeholder='Less than 90 characters'></textarea>
+                </div>
+                <div class='new-button-container'>
+                    <button class='new-project-cancel'>Cancel</button>
+                    <button class='new-project-confirm'>Add project</button>
+                </div>
+            </div>`
+        ;
+        
+        const dashboardContainer = document.querySelector('#dashboard');
+       dashboardContainer.appendChild(newProjectPrompt);
 
         if(projectTitle == '' || projectDescription == '' || projectTitle == null || projectDescription == null) return;
         addNewProject();
