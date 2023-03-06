@@ -301,6 +301,11 @@
             buttonDisabled = false;
         });
         confirm.addEventListener('click', () => {
+            
+            //Stops inner.HTML abuse
+            title.value = title.value.replace(/<|>/g, ' ');
+            description.value = description.value.replace(/<|>/g, ' ');
+
             let newProject = new project(title.value, description.value);
             projectsArr.unshift(newProject);
             
