@@ -111,7 +111,7 @@
                 </div>
             </div>
             <div class="action-buttons">
-                <button>New</button>
+                <button id="add-project-button">New</button>
                 <button>Upload</button>
                 <button>Share</button>
             </div>
@@ -120,75 +120,9 @@
     <div class="projects-grid-area">
         <div class="grid-title-container">
             <p class="grid-title">Your Projects</p>
-            <button id="add-project-button">+New Project</button>
         </div>
         <div class="projects-grid-container">
-            <div class="project-cell">
-                <div class="top-cell">
-                    <div class="project-title">Super cool project</div>
-                    <div class="project-description">Sed tempus it lacus ut scelerisque. Suspendisse sollicitudin nibh erat, id facilisis felis accumsan nec.</div>
-                </div>
-                <div class="bottom-cell">
-                    <div class="mini-buttons">
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="project-cell">
-                <div class="top-cell">
-                    <div class="project-title">Super cool project</div>
-                    <div class="project-description">Sed tempus it lacus ut scelerisque. Suspendisse sollicitudin nibh erat, id facilisis felis accumsan nec.</div>
-                </div>
-                <div class="bottom-cell">
-                    <div class="mini-buttons">
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="project-cell">
-                <div class="top-cell">
-                    <div class="project-title">Super cool project</div>
-                    <div class="project-description">Sed tempus it lacus ut scelerisque. Suspendisse sollicitudin nibh erat, id facilisis felis accumsan nec.</div>
-                </div>
-                <div class="bottom-cell">
-                    <div class="mini-buttons">
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="project-cell">
-                <div class="top-cell">
-                    <div class="project-title">Super cool project</div>
-                    <div class="project-description">Sed tempus it lacus ut scelerisque. Suspendisse sollicitudin nibh erat, id facilisis felis accumsan nec.</div>
-                </div>
-                <div class="bottom-cell">
-                    <div class="mini-buttons">
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="project-cell">
-                <div class="top-cell">
-                    <div class="project-title">Super cool project</div>
-                    <div class="project-description">Sed tempus it lacus ut scelerisque. Suspendisse sollicitudin nibh erat, id facilisis felis accumsan nec.</div>
-                </div>
-                <div class="bottom-cell">
-                    <div class="mini-buttons">
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="project-cell">
-                <div class="top-cell">
-                    <div class="project-title">Super cool project</div>
-                    <div class="project-description">Sed tempus it lacus ut scelerisque. Suspendisse sollicitudin nibh erat, id facilisis felis accumsan nec.</div>
-                </div>
-                <div class="bottom-cell">
-                    <div class="mini-buttons">
-                        
-                    </div>
-                </div>
-            </div>
+    
         </div>
     </div>
     <div class="right-side-content">
@@ -254,7 +188,7 @@
             <path fill="#1f2937" d="M18 22q-1.25 0-2.125-.875T15 19q0-.175.025-.363t.075-.337l-7.05-4.1q-.425.375-.95.588T6 15q-1.25 0-2.125-.875T3 12q0-1.25.875-2.125T6 9q.575 0 1.1.213t.95.587l7.05-4.1q-.05-.15-.075-.337T15 5q0-1.25.875-2.125T18 2q1.25 0 2.125.875T21 5q0 1.25-.875 2.125T18 8q-.575 0-1.1-.212t-.95-.588L8.9 11.3q.05.15.075.338T9 12q0 .175-.025.363T8.9 12.7l7.05 4.1q.425-.375.95-.587T18 16q1.25 0 2.125.875T21 19q0 1.25-.875 2.125T18 22Z"/>
         </svg>`;
 
-    //Add all mini button icons to html
+    //Add all mini button icons to project cells
     function addMiniButtons() {
         const miniButtons = document.querySelectorAll('.mini-buttons');
     
@@ -264,61 +198,122 @@
             a.appendChild(template.content)
         });  
     }
-    //Add mini buttons to projects already being displayed
-    addMiniButtons();
+
+
+
+    //Demo project content
+    class project {
+        constructor(title, description) {
+            this.title = title;
+            this.description = description;
+        }
+    }
+
+    let demo1 = new project('Cool Project 1', 'Sed tempus it lacus ut scelerisque. Suspendisse sollicitudin nibh erat, id facilisis felis accumsan nec.');
+    let demo2 = new project('Super Cool Project', 'Sed tempus it lacus ut scelerisque. Suspendisse sollicitudin nibh erat, Suspendisse sollicitudin nibh erat, d facilisis felis accumsan nec. Suspendisse sollicitudin nibh erat, d facilisis felis accumsan nec. Suspendisse sollicitudin nibh erat, d facilisis felis accumsan nec. Suspendisse sollicitudin nibh erat, d facilisis felis accumsan nec. ');
+    let demo3 = new project('Demo Project', 'Sed tempus it lacus ut scelerisque. Suspendisse sollicitudin nibh erat');
+    let demo4 = new project('Another Project', 'Suspendisse sollicitudin nibh erat');
+    let projectsArr =[demo1,demo2,demo3,demo4];
+
+    const projectContainer = document.querySelector(".projects-grid-container");
+
+    //Load all existing projects
+    function loadProjects(){
+
+        let shortenDescriptionArr = [];//Save all shortened descriptions in seperate array
+
+        for (let i = 0; i < projectsArr.length; i++){
+
+        //Shorten words for the rare case of them being longer than 35 characters
+            let individualWords = [];
+            individualWords = projectsArr[i].description.split(' ');
+            projectsArr[i].description = '';
+            for(let d = 0; d < individualWords.length; d++){
+                if(individualWords[d].length / 30 > 2) {
+                    let newStr = individualWords[d].substring(0,individualWords[d].length / 2) + '... ' + individualWords[d].substring(individualWords[d].length / 2, individualWords[d].length);
+                    individualWords[d] = newStr;
+                }
+            }
+            projectsArr[i].description = individualWords.join(' ');
+
+
+        //shorten descriptions longer than 90 chars
+            if(projectsArr[i].description.length > 90){
+                shortenDescriptionArr.push(projectsArr[i].description.slice(0,87) + '...');
+            }else {
+                shortenDescriptionArr.push(projectsArr[i].description);
+            }
+            
+            const newProjectCell = document.createElement('newProjectCell');
+            newProjectCell.innerHTML = 
+                `<div class="project-cell">
+                        <div class="top-cell">
+                            <div class="project-title">`+projectsArr[i].title+`</div>
+                            <div class="project-description">`+shortenDescriptionArr[i]+`</div>
+                        </div>
+                        <div class="bottom-cell">
+                            <div class="mini-buttons">
+                                
+                            </div>
+                        </div>
+                    </div>`
+            ;
+            projectContainer.appendChild(newProjectCell);
+        }
+        //Add mini buttons to projects already being displayed
+        addMiniButtons();
+    }
+    loadProjects(); 
 
     //Add project button
-    let projectTitle = '';
-    let projectDescription = '';
+    let buttonDisabled = false; //Used for 'New' button and for 'Cancel' and 'Confirm' buttons in new project cell popup
     const newProjectButton = document.querySelector('#add-project-button');
+    
     newProjectButton.addEventListener('click', () => {
+        if(buttonDisabled) return;
+        else buttonDisabled = true;
 
         //create pop up prompt for new project creation
         const newProjectPrompt = document.createElement('newProjectPrompt');
+        newProjectPrompt.classList.add('new-project-container');
         newProjectPrompt.innerHTML = 
-            `<div class = 'new-project-container'>
-                <div class="new-project-title">
-                    Title:
-                    <textarea cols="30" rows="1" placeholder="Ex. 'Super Cool Project'"></textarea>
-                </div>
-                <div class="new-project-description">
-                    Enter short description:
-                    <textarea cols="30" rows="3" placeholder='Less than 90 characters'></textarea>
-                </div>
-                <div class='new-button-container'>
-                    <button class='new-project-cancel'>Cancel</button>
-                    <button class='new-project-confirm'>Add project</button>
-                </div>
-            </div>`
-        ;
-        
-        const dashboardContainer = document.querySelector('#dashboard');
-       dashboardContainer.appendChild(newProjectPrompt);
-
-        if(projectTitle == '' || projectDescription == '' || projectTitle == null || projectDescription == null) return;
-        addNewProject();
-    });
-
-
-    function addNewProject() {
-
-        const projectContainer = document.querySelector(".projects-grid-container");
-
-        const projectCell = document.createElement('projectCell');
-        projectCell.innerHTML = 
-            `<div class="top-cell">
-                <div class="project-title">`+projectTitle+`</div>
-                <div class="project-description">`+projectDescription+`</div>
+            `<div class='new-project-text-container'> 
+                <textarea id='title' maxlength='30' cols="30" rows="1" placeholder="Title"></textarea>
+                <textarea id='description' maxlength='150' cols="30" rows="3" placeholder='Short Description'></textarea>
             </div>
-            <div class="bottom-cell">
-                <div class="mini-buttons">`
-                    +miniButtonSVG+`
-                </div>
-            </div>`
+            <div class='new-project-button-container'>
+                <button class='new-project-cancel'>Cancel</button>
+                <button class='new-project-confirm'>Confirm</button>
+            </div>
+            `
         ;
-        projectCell.classList.add('project-cell'); //Add CSS styles to new project
-        projectContainer.appendChild(projectCell);
-    }
+
+        projectContainer.prepend(newProjectPrompt);
+
+        const title = document.querySelector('#title');
+        const description = document.querySelector('#description');
+
+        const cancel = document.querySelector('.new-project-cancel');
+        const confirm = document.querySelector('.new-project-confirm');
+
+        cancel.addEventListener('click', () => {
+            newProjectPrompt.remove();
+            buttonDisabled = false;
+        });
+        confirm.addEventListener('click', () => {
+            let newProject = new project(title.value, description.value);
+            projectsArr.unshift(newProject);
+            
+            function removeAllChildNodes(parent) {
+                while (parent.firstChild) {
+                    parent.removeChild(parent.firstChild);
+                }
+            }
+            removeAllChildNodes(projectContainer);
+            loadProjects();
+        });
+
+    });
 
 
 

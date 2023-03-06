@@ -121,9 +121,6 @@ ul{
     font-size: 14px;
 }
 
-
-
-
 /*Projects grid*/
 .grid-title-container{
     display: flex;
@@ -131,11 +128,7 @@ ul{
     justify-content: space-between;
 }
 #add-project-button{
-    height: 24px;
-    margin-right: 20px;
-    border: none;
-    background-color: orange;
-    border-radius: 8px;
+    background-color: #0ea5e9;
     color: white;
 }
 #add-project-button:hover{
@@ -167,6 +160,7 @@ ul{
 }
 .bottom-cell{
     display: flex;
+    flex-wrap: wrap;
     justify-content: right;
 }
 .mini-buttons{
@@ -238,61 +232,40 @@ ul{
 
 /*New project pop-up*/
 .new-project-container{
-    position: absolute;
-    background-color: white;
-    border: 1px solid #a1a1aa;
-    border-left: orange 8px solid;
-    box-shadow: 2px 4px 5px #a1a1aa;
-    border-radius: 8px;
-    top: 30%;
-    left: 30%;
-    min-width: fit-content;
-    min-height: fit-content;
-    padding: 24px 24px 24px 24px;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
-    gap: 14px;
-}
-.new-project-container button{
-    width: fit-content;
-    background-color: #0ea5e9;
-    border: none;
-    border-radius: 10px;
-    padding: 8px;
-    color: white;
-}
-.new-project-container button:nth-child(1):hover{
-    background-color: red;
-}
-.new-project-container button:nth-child(2):hover{
-    background-color: orange;
-}
-.new-project-title, .new-project-description{
     display: flex;
     flex-direction: column;
-    gap: 4px;
-    
+    background-color: white;
+    padding: 10px 10px 20px 10px;
+    margin: 0px 8px 8px 8px;
+    border-left: orange 6px solid;
+    border-radius: 6px;
+    gap: 16px;
 }
-.new-project-title textarea, .new-project-description textarea{
-    resize: none;
-    outline: none;
-    font-size: 18px;
+.new-project-text-container{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.new-project-text-container textarea{
+    font-size: 16px;
+    font-family: 'Roboto';
+    outline-color: #0ea5e9;
+    border: 1px solid black;
     border-radius: 8px;
+    resize: none;
+    padding-left: 4px;
+}
+.new-project-button-container{
+    display: flex;
+    align-items: center;
 }
 
-textarea{
-    font-family: 'Roboto';
-}
-textarea:focus{
-    border-color: #0ea5e9;
-}
 
 
 
 
 /*Common styling*/
-.project-cell, .announcements-container, .trending-accounts-container, .header-container{
+.project-cell, .announcements-container, .trending-accounts-container, .header-container, .new-project-container{
     box-shadow: 2px 4px 5px #a1a1aa;
 }
 .navigation-bar, .action-buttons button{
