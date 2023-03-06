@@ -82,7 +82,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 256 256">
                     <path fill="currentColor" d="m232.5 215.5l-40.7-40.7A94.9 94.9 0 0 0 212 116a96 96 0 1 0-96 96a94.9 94.9 0 0 0 58.8-20.2l40.7 40.7a12.1 12.1 0 0 0 17 0a12 12 0 0 0 0-17ZM44 116a72 72 0 1 1 72 72a72.1 72.1 0 0 1-72-72Z"/>
                 </svg>
-                <textarea cols="30" rows="1" placeholder="Search Projects"></textarea>
+                <textarea id="search-bar-textarea" cols="30" rows="1" placeholder="Search Projects"></textarea>
             </div>
             <div class="top-right">
                 <!--Bell icon top right-->
@@ -173,9 +173,7 @@
 </body>
 </html>
 <script>
-
-    //TODO LIST: Create a better solution for the prompt pop up, and make the search projects bar functional.
-
+    
     //Mini button svg code
     const miniButtonSVG = 
         `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -208,7 +206,6 @@
             this.description = description;
         }
     }
-
     let demo1 = new project('Cool Project 1', 'Sed tempus it lacus ut scelerisque. Suspendisse sollicitudin nibh erat, id facilisis felis accumsan nec.');
     let demo2 = new project('Super Cool Project', 'Sed tempus it lacus ut scelerisque. Suspendisse sollicitudin nibh erat, Suspendisse sollicitudin nibh erat, d facilisis felis accumsan nec. Suspendisse sollicitudin nibh erat, d facilisis felis accumsan nec. Suspendisse sollicitudin nibh erat, d facilisis felis accumsan nec. Suspendisse sollicitudin nibh erat, d facilisis felis accumsan nec. ');
     let demo3 = new project('Demo Project', 'Sed tempus it lacus ut scelerisque. Suspendisse sollicitudin nibh erat');
@@ -224,7 +221,7 @@
 
         for (let i = 0; i < projectsArr.length; i++){
 
-        //shorten descriptions longer than 90 chars
+            //shorten descriptions longer than 90 chars
             if(projectsArr[i].description.length > 90){
                 shortenDescriptionArr.push(projectsArr[i].description.slice(0,87) + '...');
             }else {
@@ -250,7 +247,7 @@
         //Add mini buttons to projects already being displayed
         addMiniButtons();
     }
-    loadProjects(); 
+    loadProjects();//Load all demo projects
 
     //Add project button
     let buttonDisabled = false; //Used for 'New' button and for 'Cancel' and 'Confirm' buttons in new project cell popup
@@ -279,7 +276,6 @@
 
         const title = document.querySelector('#title');
         const description = document.querySelector('#description');
-
         const cancel = document.querySelector('.new-project-cancel');
         const confirm = document.querySelector('.new-project-confirm');
 
@@ -287,6 +283,7 @@
             newProjectPrompt.remove();
             buttonDisabled = false;
         });
+
         confirm.addEventListener('click', () => {
             
             //Stops inner.HTML abuse
@@ -307,9 +304,7 @@
             loadProjects();
             buttonDisabled = false;
         });
-
     });
-
 
 
 </script>
