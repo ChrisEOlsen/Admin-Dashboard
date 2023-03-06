@@ -224,19 +224,6 @@
 
         for (let i = 0; i < projectsArr.length; i++){
 
-        //Shorten words for the rare case of them being longer than 35 characters
-            let individualWords = [];
-            individualWords = projectsArr[i].description.split(' ');
-            projectsArr[i].description = '';
-            for(let d = 0; d < individualWords.length; d++){
-                if(individualWords[d].length / 30 > 2) {
-                    let newStr = individualWords[d].substring(0,individualWords[d].length / 2) + '... ' + individualWords[d].substring(individualWords[d].length / 2, individualWords[d].length);
-                    individualWords[d] = newStr;
-                }
-            }
-            projectsArr[i].description = individualWords.join(' ');
-
-
         //shorten descriptions longer than 90 chars
             if(projectsArr[i].description.length > 90){
                 shortenDescriptionArr.push(projectsArr[i].description.slice(0,87) + '...');
@@ -316,6 +303,7 @@
             }
             removeAllChildNodes(projectContainer);
             loadProjects();
+            buttonDisabled = false;
         });
 
     });
