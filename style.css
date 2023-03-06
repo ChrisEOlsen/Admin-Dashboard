@@ -259,7 +259,24 @@ ul{
 .new-project-button-container{
     display: flex;
     align-items: center;
+    justify-content: right;
+    gap: 8px;
 }
+.new-project-cancel, .new-project-confirm{
+    border: none;
+    border-radius: 10px;
+    background-color: #0ea5e9;
+    color: white;
+    padding: 6px 10px 6px 10px;
+}
+.new-project-cancel:focus, .new-project-cancel:hover{
+    outline: none;
+    background-color: red;
+} 
+.new-project-confirm:focus, .new-project-confirm:hover{
+    outline: none;
+    background-color: darkorange;
+} 
 
 
 

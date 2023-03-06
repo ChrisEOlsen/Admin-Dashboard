@@ -292,6 +292,8 @@
             //Stops inner.HTML abuse
             title.value = title.value.replace(/<|>/g, ' ');
             description.value = description.value.replace(/<|>/g, ' ');
+            //Rejects empty projects
+            if(title.value == '' || description.value == '')return;
 
             let newProject = new project(title.value, description.value);
             projectsArr.unshift(newProject);
